@@ -55,3 +55,12 @@ To run this project locally for development:
 4. **Start the server:**
    ```bash
    node server.js
+
+---
+
+## 🌱 Future Roadmap
+- [ ] **Containerization:** Moving code execution to **Docker** for better security isolation and resource limiting.
+- [ ] **Plagiarism Detection:** Integrating **MOSS** (Measure of Software Similarity) or custom logic to detect code sharing.
+- [ ] **Cloud Ready:** Migrating from LAN-only to **AWS/GCP** deployment with a scalable architecture.
+- [ ] **Live Socket Updates:** Real-time leaderboard shifts and global notifications using **Socket.io**.
+- [ ] **Enhanced UI/UX:** Polishing the participant dashboard with a more immersive, "Escape Room" themed interface.
