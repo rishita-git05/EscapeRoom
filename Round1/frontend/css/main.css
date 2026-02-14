@@ -1,0 +1,223 @@
+body {
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  /* Deep midnight gradient */
+  background: radial-gradient(circle at center, #1a1c2c 0%, #0a0b10 100%);
+  color: #e0e0e0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.start-container {
+  text-align: center;
+  /* Subtle glass effect with dark tint */
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  
+  padding: 48px 40px;
+  border-radius: 24px;
+  width: 340px;
+  
+  /* Layering effects */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.start-container h1 {
+  margin-bottom: 8px;
+  font-size: 1.8rem;
+  letter-spacing: -1px;
+  color: #ffffff;
+}
+
+.tagline {
+  color: #a0a0a0;
+  font-size: 0.95rem;
+  margin-bottom: 32px;
+}
+
+input {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  
+  /* Dark input style */
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+input::placeholder {
+  color: #555;
+}
+
+input:focus {
+  border-color: #00d4ff;
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.15);
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  /* Vivid cyan glow */
+  background: linear-gradient(135deg, #00d4ff 0%, #0083fe 100%);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 131, 254, 0.3);
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.1);
+  box-shadow: 0 6px 20px rgba(0, 131, 254, 0.4);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.error {
+  color: #ff6b6b;
+  font-size: 0.85rem;
+  margin-top: 16px;
+  display: block;
+}
+
+.story-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url("../assets/room1.png") no-repeat center center/cover;
+  color: white;
+  text-align: center;
+}
+
+.story-container {
+  background: rgba(0,0,0,0.7);
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 600px;
+}
+
+.room-page {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.room-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#timer {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  font-weight: bold;
+  color: #00ffcc;
+}
+
+.hint {
+  position: absolute;
+  top: 10%;
+  left: 70%;
+  font-size: 24px;
+  cursor: pointer;
+  color: yellow;
+}
+
+.room-object {
+  position: absolute;
+  top: 30%;  /* position based on your image */
+  left: 60%;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.key {
+  position: absolute;
+  top: 30%;  /* hidden location, can change later */
+  left: 60%;
+  font-size: 40px;
+  display: none;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #00ffcc; }
+  to { text-shadow: 0 0 20px #00ffcc; }
+}
+
+.terminal {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  background: rgba(0,0,0,0.9);
+  padding: 20px;
+  border-radius: 10px;
+  display: none; /* locked by default */
+}
+
+.terminal textarea {
+  width: 100%;
+  height: 120px;
+  background: black;
+  color: #0f0;
+  border: none;
+  padding: 10px;
+  font-family: monospace;
+}
+
+.terminal pre {
+  background: black;
+  color: #0f0;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.question-box {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  padding: 16px;
+  background: rgba(0,0,0,0.85);
+  color: #00ffcc;
+  border: 2px solid #00ffcc;
+  border-radius: 8px;
+  z-index: 10;
+  font-family: monospace;
+}
+
+.flash {
+  animation: glitch 0.3s;
+}
+
+@keyframes glitch {
+  0% { transform: translateX(-50%) scale(1); }
+  50% { transform: translateX(-48%) scale(1.02); }
+  100% { transform: translateX(-50%) scale(1); }
+}

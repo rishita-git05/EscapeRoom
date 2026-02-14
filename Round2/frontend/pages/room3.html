@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ESCAPE ROOM - 3</title>
+  <link rel="stylesheet" href="../css/room3.css">
+</head>
+
+<body class="room-page">
+
+  <div class="room-container">
+    <!-- Background -->
+    <img src="../assets/room3.png" alt="Room 1" class="room-bg">
+
+    <!-- Timer -->
+    <div id="timer">⏳ Time left: 20:00</div>
+
+    <!-- Dialogue Overlay -->
+    <div id="dialogueOverlay" class="dialogue hidden">
+    <div class="dialogue-box">
+        <p id="dialogueText">
+        You found the key…  
+        But freedom isn’t given so easily.  
+        <br><br>
+        <strong>Prove your logic.</strong>
+        </p>
+        <button id="continueBtn">Continue ▶</button>
+    </div>
+    </div>
+
+    <!-- Terminal -->
+    <div id="terminal" class="terminal locked">
+
+    <div id="question-box" class="question-box hidden">
+        <h3 id="questionTitle"></h3>
+        <p id="questionTask"></p>
+        <p><strong>Input:</strong> <span id="questionInput"></span></p>
+        <p><strong>Output:</strong> <span id="questionOutput"></span></p>
+    </div>
+
+
+      <button id="toggleQuestionBtn">Hide Question ⬆️</button>
+
+      <select id="languageSelect">
+        <option value="c">C</option>
+        <option value="python">Python</option>
+        <option value="java">Java</option>
+      </select>
+
+      <textarea id="codeInput"></textarea>
+      <button id="submitBtn">Submit</button>
+      <pre id="output"></pre>
+
+    </div>
+
+
+
+    <!-- Key (hidden until found) -->
+    <div id="key" class="key hidden">🗝️</div>
+
+    <!-- Room Object -->
+    <div id="clock" class="room-object">😬</div>
+
+    <!-- Hint -->
+    <div id="hint" class="hint hidden">🔍 Hint: “Look where you rest, not where you roam.
+Under it not over it"</div>
+  </div>
+
+  <script src="../js/room3.js"></script>
+</body>
+</html>

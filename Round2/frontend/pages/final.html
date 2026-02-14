@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CTRL + ESC — Escaped</title>
+  <style>
+    body {
+      background: #000;
+      color: #00ffcc;
+      font-family: monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .box {
+      border: 2px solid #00ffcc;
+      padding: 30px;
+      text-align: center;
+      width: 400px;
+      box-shadow: 0 0 20px #00ffcc;
+    }
+
+    h1 { margin-bottom: 10px; }
+    p { color: #ccc; }
+
+    .score {
+      font-size: 32px;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+    <h1>ESCAPE SUCCESSFUL</h1>
+    <p>Security systems overridden</p>
+
+    <div class="score">Score: <span id="score">Loading...</span></div>
+    <p>Roll No: <span id="rollno">...</span></p>
+    <p>Rooms Cleared: <span id="rooms">...</span></p>
+    <p>Tab Switches: <span id="tabs">0</span></p>
+
+    <p>Thank you for playing</p>
+  </div>
+
+  <script>
+    const rollno = new URLSearchParams(window.location.search).get("rollno");
+
+    async function loadFinalStats() {
+      const res = await fetch(`/players/final/${rollno}`);
+      const data = await res.json();
+
+      if (!data.success) {
+        alert("Session expired");
+        return;
+      }
+
+      document.getElementById("rollno").innerText = rollno;
+      document.getElementById("score").innerText = data.totalScore;
+
+      const cleared =
+        (data.roomTimes.room1 > 0 ? 1 : 0) +
+        (data.roomTimes.room2 > 0 ? 1 : 0) +
+        (data.roomTimes.room3 > 0 ? 1 : 0);
+
+      document.getElementById("rooms").innerText = cleared;
+      document.getElementById("tabs").innerText = data.tabSwitches;
+
+    }
+
+    loadFinalStats();
+  </script>
+
+</body>
+</html>

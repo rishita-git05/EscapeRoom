@@ -1,0 +1,199 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: #000;
+  color: #fff;
+  font-family: monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* ===== BASE ===== */
+body.room-page {
+  margin: 0;
+  font-family: monospace;
+  background: #000;
+  color: #fff;
+}
+
+.room-container {
+  position: relative; /* This creates the 'anchor' for the text */
+  width: 100vw;
+  height: 100vh;
+  display: flex;      /* This helps center the text box */
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.room-bg {
+  position: absolute; /* This takes the image out of the flow */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;         /* Places image at the bottom */
+}
+
+.story-container {
+  position: relative;  /* Ensures it stays on top of the absolute image */
+  z-index: 2;          /* Higher layer */
+  text-align: center;
+  max-width: 600px;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.7); /* Optional: adds a dark tint to make text readable */
+  border: 2px solid #0f0;
+  box-shadow: 0 0 20px #0f0;
+}
+
+h1 {
+  color: #0f0;
+  margin-bottom: 30px;
+}
+
+p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.danger {
+  color: #ff4d4d;
+}
+
+button {
+  margin-top: 30px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #0f0;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #00cc00;
+}
+
+body.story-page {
+  margin: 0;
+  height: 100vh;
+  background: radial-gradient(circle at center, #050505, #000);
+  color: #e5e5e5;
+  font-family: "Courier New", monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.story-container {
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+}
+
+.line {
+  font-size: 1.1rem;
+  margin: 14px 0;
+  opacity: 0;
+  animation: fadeIn 1.2s forwards;
+}
+
+.line:nth-child(1) { animation-delay: 0.5s; }
+.line:nth-child(2) { animation-delay: 1.5s; }
+.line:nth-child(3) { animation-delay: 2.5s; }
+.line:nth-child(4) { animation-delay: 3.5s; }
+.line:nth-child(5) { animation-delay: 4.5s; }
+.line:nth-child(6) { animation-delay: 5.5s; }
+.line:nth-child(7) { animation-delay: 6.5s; }
+.line:nth-child(8) { animation-delay: 7.5s; }
+
+.glitch {
+  color: #ff4d4d;
+  text-shadow: 1px 0 red, -1px 0 cyan;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+#continueBtn {
+  margin-top: 30px;
+  padding: 12px 26px;
+  background: black;
+  border: 1px solid #ff4d4d;
+  color: #ff4d4d;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#continueBtn:hover {
+  background: #ff4d4d;
+  color: black;
+}
+
+/* Container for the story text */
+.story-container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 650px;
+  padding: 50px;
+  
+  /* Glassmorphism Effect */
+  background: rgba(0, 0, 0, 0.6); 
+  backdrop-filter: blur(8px); /* Blurs the background behind the box */
+  -webkit-backdrop-filter: blur(7px);
+  
+  border: 1px solid rgba(0, 225, 255, 0.3); /* Subtle green border */
+  border-radius: 8px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.8), 0 0 15px rgba(0, 255, 0, 0.1);
+}
+
+h1 {
+  color: #0ff;
+  font-size: 2.5rem;
+  letter-spacing: 5px;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+  margin: 15px 0;
+  letter-spacing: 1px;
+}
+
+/* Redesigned Button */
+button, #continueBtn {
+  margin-top: 40px;
+  padding: 15px 40px;
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  background: transparent;
+  color: #ff4d4d;
+  border: 2px solid #ff4d4d;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+button:hover {
+  background: #ff4d4d;
+  color: #000;
+  box-shadow: 0 0 20px rgba(255, 77, 77, 0.6);
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(1px);
+}

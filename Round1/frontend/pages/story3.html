@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CTRL + ESC — Transmission</title>
+  <link rel="stylesheet" href="../css/story.css" />
+</head>
+
+<body class="story-page">
+<div class="room-container">
+    <img src="../assets/story3.png" alt="Room 1" class="room-bg">
+  <div class="story-container">
+    <h1>FINAL PROTOCOL ENGAGED</h1>
+    <p class="line fade">You escaped the second room.</p>
+    <p class="line fade">The door slams shut behind you.</p>
+
+    <p class="line glitch">SYSTEM: Unexpected progress detected.</p>
+
+    <p class="line fade">
+      The lights flicker.  
+      Your terminal boots up on its own.
+    </p>
+
+    <p class="line glitch">
+      SYSTEM: There are no hints left.<br>
+There are no fragments left.
+    </p>
+
+    <p class="line glitch">
+      SYSTEM: Only pure logic accepted.
+    </p>
+
+    <p class="line fade">
+      When the clock hits zero…<br>
+<b>the system decides your fate.</b>
+    </p>
+
+    <button id="continueBtn">Enter Room 3 ▶</button>
+  </div>
+</div>
+  <script>
+    document.getElementById("continueBtn").addEventListener("click", () => {
+      window.location.href = "room3.html";
+    });
+  </script>
+
+</body>
+</html>

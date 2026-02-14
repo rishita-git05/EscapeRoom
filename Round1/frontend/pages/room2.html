@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ESCAPE ROOM - 2</title>
+  <link rel="stylesheet" href="../css/room2.css">
+</head>
+
+<body class="room-page">
+
+  <div class="room-container">
+    <!-- Background -->
+    <img src="../assets/room2.jpeg" alt="Room 1" class="room-bg">
+
+    <!-- Timer -->
+    <div id="timer">⏳ Time left: 30:00</div>
+
+    <!-- Terminal -->
+    <div id="terminal" class="terminal locked">
+
+      <div id="question-box" class="question-box hidden">
+        <h3 id="questionTitle"></h3>
+        <p id="questionTask"></p>
+      </div>
+
+      <button id="toggleQuestionBtn">Hide Question ⬆️</button>
+
+      <select id="languageSelect">
+        <option value="c">C</option>
+        <option value="python">Python</option>
+      </select>
+
+      <textarea id="codeInput"></textarea>
+      <button id="submitBtn">Submit</button>
+      <pre id="output"></pre>
+
+    </div>
+
+
+
+    <!-- Key (hidden until found) -->
+    <div id="key" class="key hidden">🗝️</div>
+
+    <!-- Room Object -->
+    <div id="clock" class="room-object">😬</div>
+
+    <!-- Hint -->
+    <div id="hint" class="hint hidden">🔍 Hint: “Among all the knowledge in this room, one object is meant to be turned, not read.<br>
+Its truth is revealed only when the world is made to move,
+and stillness is no longer trusted.”</div>
+  </div>
+
+  <script src="../js/room2.js"></script>
+</body>
+</html>
