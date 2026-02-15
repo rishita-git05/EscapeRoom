@@ -1,0 +1,9 @@
+Round1/server/.env
+Round2/server/.env
+.env
+
+# dependencies
+node_modules/
+
+# logs
+*.log
