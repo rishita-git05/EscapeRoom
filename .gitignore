@@ -3,7 +3,7 @@ Round2/server/.env
 .env
 
 # dependencies
-node_modules/
+**/node_modules/
 
 # logs
 *.log
